@@ -31,18 +31,38 @@
 #content .buttons {
     display: flex;
     gap: 15px;
+    margin-top: 20px;
 }
 #content button {
     background-color: aqua;
-    height: 25px;
+    height: auto;
     width: auto;
     padding: 5px;
     border-color: transparent;
-    border-radius: 15px;;
+    border-radius: 15px;
+    font-size: medium;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+#content button:hover {
+    background-color: rgb(55, 135, 255);
+    transform: scale(1.05);
+}
+#content button:active{
+    background-color: rgb(115, 195, 255);
+    transform: scale(1.05);
+    transition: background-color 0.1s ease, transform 0.3s ease;
+}
+
 #content_zadanie {
     background-color: #f4f4ff;
 }
+#content_zadanie b {
+    display: flex;
+    background-color: #f4f4ff;
+    justify-content: center;
+}
+
 @media (max-width: 768px) {
     #content {
         margin: 100px;

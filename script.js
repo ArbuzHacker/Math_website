@@ -6,7 +6,7 @@ function loadPage(page) {
     contentDiv.innerHTML = "<p>Loading...</p>";
 
     // Fetch the content of the requested page
-    fetch(`pages/${page}/${page}.html`)
+    fetch(`./pages/${page}/${page}.html`)
         .then(response => response.ok ? response.text() : "<h1>404 - Page Not Found</h1>")
         .then(data => {
             contentDiv.innerHTML = data; // Insert the content into the page
@@ -30,7 +30,7 @@ function loadContent(page) {
     contentDiv.innerHTML = "<p>Loading...</p>";
 
     // Fetch the content of the requested page
-    fetch(`/pages/${page}/${page}.html`)
+    fetch(`./pages/${page}/${page}.html`)
     
         .then(response => response.ok ? response.text() : "<h1>404 - Page Not Found</h1>")
         .then(data => {
