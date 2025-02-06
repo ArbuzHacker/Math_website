@@ -1,9 +1,13 @@
 #content_zadanie {
+    display: flex;
     width: 70vh;
     align-self: center;
+    flex-direction: column;
+    align-items: center;
 }
-#content_zadanie body {
-    justify-content: center;
+
+#content_zadanie .right {
+    text-align: right;
 }
 
 #content_zadanie .adnote {

@@ -4,197 +4,202 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LaTeX w HTML</title>
-    
-    <!-- MathJax -->
-    <script type="text/javascript" async
-      src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Zadanie 5</h1>
     
-    <h2>a&#41;</h2>
-    <p>Samochód przejechał drogę długości  <span>\(120\ km\)</span>. Gdyby jechał ze średnią prędkością o \(30\ km/h\) większą, to czas jazdy byłby krótszy o \(54\) minuty. <br>Jaka była średnia prędkość samochodu?</br></p>
-    <br><br></br>
-    
-    <h3>Informacje z treści:</h3>
-    
-    <ul>
-        <li>\(s=120\ km\)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &leftarrow; &nbsp;&nbsp;przebyta droga </li>
-        <li>\(v_{\text{śr}}=v+30\ km/h\)&nbsp;&nbsp; &leftarrow; &nbsp;średnia prędkość  </li>
-        <li>\(t_{\text{kr}}=t-54\ minuty\) &leftarrow; &nbsp;&nbsp;czas jazdy </li>
-    </ul>
-    
-        <br></br>
+<h2>a&#41;</h2>
+<p>Samochód przejechał drogę długości <span class="math">120 km</span>. Gdyby jechał ze średnią prędkością o <span class="math">30 km/h</span> większą, to czas jazdy byłby krótszy o <span class="math">54</span> minuty. <br>Jaka była średnia prędkość samochodu?</br></p>
+<br><br></br>
 
-    <p>Najpierw zamieńmy minuty na godziny, żeby zgadzały się jednostki</p>
-    $$ 54\ minuty=\frac{54}{60}\ godziny=\frac{9}{10}\ godziny $$
-    <p>Znając wzór na czas w ruchu jednostajnym \(\left(t=\frac{s}{v}\right)\) i posługując się informacjami z treści zadania, możemy ułożyć poniższy układ równań:</p>
-    <p> $$ 
-        \left\&#123;
-        \begin{array}{1}
-            \frac{s}{v}=t \\
-            \frac{s}{v+30}=t-\frac{9}{10}
-        \end{array}
+<h3>Informacje z treści:</h3>
+
+<ul>
+    <li><span class="math">s = 120 km</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &leftarrow; &nbsp;&nbsp;przebyta droga </li>
+    <li><span class="math">v_{śr} = v + 30 km/h</span>&nbsp;&nbsp; &leftarrow; &nbsp;średnia prędkość  </li>
+    <li><span class="math">t_{kr} = t - 54 minuty</span> &leftarrow; &nbsp;&nbsp;czas jazdy </li>
+</ul>
+
+<br></br>
+
+<p>Najpierw zamieńmy minuty na godziny, żeby zgadzały się jednostki</p>
+<span class="math"> 54 minuty = \frac{54}{60} godziny = \frac{9}{10} godziny </span>
+<p>Znając wzór na czas w ruchu jednostajnym <span class="math">(t = \frac{s}{v})</span> i posługując się informacjami z treści zadania, możemy ułożyć poniższy układ równań:</p>
+<p> 
+    <span class="math"> 
+        \left\{ 
+        begin{array}{1}
+            \frac{s}{v} = t \\
+            \frac{s}{v+30} = t - \frac{9}{10}
+        end{array}
         \right.
-        $$
-    </p>
-    <p>Teraz pozostało nam wyznaczyć \(v\) z jednego równania, które podstawimy pod drugie i rozwiążemy proste równanie kwadratowe.</p>
-    <p style="height: auto; font-size: xx-large;">
-        $$
-        \frac{s}{v}=t \implies \frac{s}{t}=v
-        $$
-    </p>
-    <p style="height: auto; font-size: xx-large;"> 
-        $$
-        \frac{s}{v+30}=t-\frac{9}{10} \implies \frac{s}{\frac{s}{t}+30}=t-\frac{9}{10}
-        $$
-    </p>
-    <p style="height: auto; font-size: xx-large;"> 
-        $$
-        s=\left(t-\frac{9}{10}\right)\left(\frac{s}{t}+30\right)
-        $$
-    </p>
-    <p>Podstawiamy wartości i rozwiązujemy równanie:</p>
-    <p style="height: auto; font-size: xx-large;"> 
-        $$
-        120=\left(t-\frac{9}{10}\right)\left(\frac{120}{t}+30\right)
-        $$
-    </p>
-    <p style="height: auto; font-size: xx-large;">
-        $$
-        120=120+30t-\frac{108}{t}-27
-        $$
-    </p>
-    <p>Mnożymy przez \(t\):</p>
-    <p style="height: auto; font-size: xx-large;">
-        $$
-        120t=120t+30t^2-108-27t
-        $$
-        $$30t^2-27t-108=0$$
-    </p>
-    <p>korzystamy ze wzorów na wyróżnik trójmianu kwadratowego <span>\(\left(\Delta=b^2-4ac\right.)\)</span> i na pierwiastki równania kwadratowego <span>\(\left(t_{1,2}=\frac{-b\pm\sqrt{\Delta}}{2a}\right)\)</span></p>
-    </p>
-    <p style="height: auto; font-size: xx-large; margin-top: 5%;">
-        $$
-        \Delta=(-27)^2-4\cdot30\cdot(-108)=729+12960=13689
-        $$
-        <p style="height: auto; font-size: xx-large; margin-top: 10%; margin-bottom: 10%;">
-            $$t_{1}=\frac{27+\sqrt{13689}}{60}=\frac{27+117}{60}=2,4$$
-            $$t_{2}=\frac{27-\sqrt{13689}}{60}=\frac{27-117}{60}=-1,5$$
-        </p>
-    </p>
-    <p>Otrzymaliśmy 2 wyniki, lecz jeden  z nich jest ujemny, a czas nie może być na \((-)\), co za tym idzie \(t_1\) jest naszym pierwiastkiem. Podstawmy więc \(t_1\) do wzoru na prędkość</p>
-    
-    <p style="height: auto; font-size: xx-large;">
-        $$
-        v=\frac{s}{t}=\frac{120}{2,4}=50
-        $$
-        <p style="font-size: 25px; opacity: 50%;">jest to nasza odpowiedź, ale nie zapomnijmy o jednostkach :3</p>
-    </p>
+    </span>
+</p>
+<p>Teraz pozostało nam wyznaczyć <span class="math">v</span> z jednego równania, które podstawimy pod drugie i rozwiążemy proste równanie kwadratowe.</p>
+<p style="height: auto; font-size: xx-large;">
+    <span class="math"> 
+        \frac{s}{v} = t \implies \frac{s}{t} = v
+    </span>
+</p>
+<p style="height: auto; font-size: xx-large;"> 
+    <span class="math"> 
+        \frac{s}{v+30} = t - \frac{9}{10} \implies \frac{s}{\frac{s}{t} + 30} = t - \frac{9}{10}
+    </span>
+</p>
+<p style="height: auto; font-size: xx-large;"> 
+    <span class="math">
+        s = \left(t - \frac{9}{10}\right) \left(\frac{s}{t} + 30\right)
+    </span>
+</p>
+<p>Podstawiamy wartości i rozwiązujemy równanie:</p>
+<p style="height: auto; font-size: xx-large;"> 
+    <span class="math">
+        120 = \left(t - \frac{9}{10}\right) \left(\frac{120}{t} + 30\right)
+    </span>
+</p>
+<p style="height: auto; font-size: xx-large;">
+    <span class="math">
+        120 = 120 + 30t - \frac{108}{t} - 27
+    </span>
+</p>
+<p>Mnożymy przez <span class="math">t</span>:</p>
+<p style="height: auto; font-size: xx-large;">
+    <span class="math">
+        120t = 120t + 30t^2 - 108 - 27t
+    </span>
+</p>
+<p><span class="math">30t^2 - 27t - 108 = 0</span></p>
+<p>korzystamy ze wzorów na wyróżnik trójmianu kwadratowego <span class="math">( \Delta = b^2 - 4ac )</span> i na pierwiastki równania kwadratowego <span class="math">( t_{1,2} = \frac{-b \pm \sqrt{\Delta}}{2a} )</span></p>
 
-    <p><b>Odpowiedź:</b> Średnia prędkość (\( v \)) była równa \(50\ km/h\).</p>
+<p style="height: auto; font-size: xx-large; margin-top: 5%;">
+    <span class="math">
+        \Delta = (-27)^2 - 4 \cdot 30 \cdot (-108) = 729 + 12960 = 13689
+    </span>
+</p>
+<p style="height: auto; font-size: xx-large; margin-top: 10%; margin-bottom: 10%;">
+    <span class="math">
+        t_{1} = \frac{27 + \sqrt{13689}}{60} = \frac{27 + 117}{60} = 2,4
+    </span>
+    <span class="math">
+        t_{2} = \frac{27 - \sqrt{13689}}{60} = \frac{27 - 117}{60} = -1,5
+    </span>
+</p>
 
-    
+<p>Otrzymaliśmy 2 wyniki, lecz jeden z nich jest ujemny, a czas nie może być na <span class="math">(-)</span>, co za tym idzie <span class="math">t_1</span> jest naszym pierwiastkiem. Podstawmy więc <span class="math">t_1</span> do wzoru na prędkość</p>
+
+<p style="height: auto; font-size: xx-large;">
+    <span class="math">
+        v = \frac{s}{t} = \frac{120}{2,4} = 50
+    </span>
+</p>
+<p style="font-size: 25px; opacity: 50%;">jest to nasza odpowiedź, ale nie zapomnijmy o jednostkach :3</p>
+
+<p><b>Odpowiedź:</b> Średnia prędkość <span class="math">v</span> była równa <span class="math">50 km/h</span>.</p>
+
 <h2 style="margin-top: 20%;">b)</h2>
 
-<p>
-    Samochód przejechał drogę z miasta A do miasta B o długości \(240\ km\) ze średnią prędkością \( v \). 
-    W drodze powrotnej jechał ze średnią prędkością \( v \), a następnie zwiększył prędkość o połowę. 
-    W rezultacie drogę powrotną przejechał w czasie o godzinę krótszym.
-</p>
+<p>Samochód przejechał drogę z miasta A do miasta B o długości <span class="math">240 km</span> ze średnią prędkością <span class="math">v</span>. W drodze powrotnej jechał ze średnią prędkością <span class="math">v</span>, a następnie zwiększył prędkość o połowę. W rezultacie drogę powrotną przejechał w czasie o godzinę krótszym.</p>
 <br><br></br>
 <h3>Informacje z treści:</h3>
 <ul>
-    <li>\( S = 240 \) km &leftarrow; droga między miastem A a B</li>
-    <li>\( v \) &leftarrow; średnia prędkość z A do B</li>
-    <li>\( t \) &leftarrow; czas przejazdu z A do B</li>
-    <li>\( S_1,\ v,\ t = 1 \)h &leftarrow; droga, prędkość i czas w drodze powrotnej przez pierwszą godzinę</li>
-    <li>\( S_2, v + 0.5v = 1.5v, t_2 \) &leftarrow; droga, prędkość i czas w drodze powrotnej przez resztę czasu</li>
-    <li>\( t_1 + t_2 = t_3 = t - 1 \) &leftarrow; cały czas podróży powrotnej</li>
+    <li><span class="math">S = 240</span> km &leftarrow; droga między miastem A a B</li>
+    <li><span class="math">v</span> &leftarrow; średnia prędkość z A do B</li>
+    <li><span class="math">t</span> &leftarrow; czas przejazdu z A do B</li>
+    <li><span class="math">S1, v, t = 1</span>h &leftarrow; droga, prędkość i czas w drodze powrotnej przez pierwszą godzinę</li>
+    <li><span class="math">S2, v + 0.5v = 1.5v, t2</span> &leftarrow; droga, prędkość i czas w drodze powrotnej przez resztę czasu</li>
+    <li><span class="math">t1 + t2 = t3 = t - 1</span> &leftarrow; cały czas podróży powrotnej</li>
 </ul>
-
 
 <p>Znając wzór na drogę w ruchu jednostajnym i korzystając z danych z treści, możemy utworzyć poniższy <b>układ równań</b>:</p>
 
-
-<p>\[
+<p><span class="math">
 \begin{cases}
 S = v \cdot t \Rightarrow t = \frac{S}{v} \\
-S_1 = v \cdot 1 \\
-S_2 = 1.5v \cdot t_2
+S1 = v \cdot 1 \\
+S2 = 1.5v \cdot t2
 \end{cases}
-\]</p>
+</span></p>
 
 <p>Wiemy, że:</p>
 
-<p>\[
-[t_3 = t_1 + t_2]_{(1)}
-\]</p>
+<p><span class="math">
+[t3 = t1 + t2]_{(1)}
+</span></p>
 
 <p>oraz</p>
 
-<p>\[
-[t_3 = t - 1]_{(2)}
-\]</p>
+<p><span class="math">
+[t3 = t - 1]_{(2)}
+</span></p>
 
-<p>Możemy zsumować \( S_1 \) i \( S_2 \) i wyznaczyć \( t_2 \):</p>
+<p>Możemy zsumować <span class="math">S1</span> i <span class="math">S2</span> i wyznaczyć <span class="math">t2</span>:</p>
 
 <p>
-    \(S_1 + S_2 = 240\ \) <span class="rel">&leftarrow; (Droga powrotna jest taka sama jak \( S \))</span>
+    <span class="math">S1 + S2 = 240</span> <span class="rel">&leftarrow; (Droga powrotna jest taka sama jak <span class="math">S</span>)</span>
 </p>
 
-
-
-<p>\[
-    S_1 + S_2 = v \cdot 1 + 1.5v \cdot t_2 = 240
-\]</p>
+<p><span class="math">
+    S1 + S2 = v \cdot 1 + 1.5v \cdot t2 = 240
+</span></p>
 
 <p>Po przekształceniu otrzymujemy:</p>
 
-<p>\[
-t_2 = \frac{240 - v}{1.5v}
-\]</p>
+<p><span class="math">
+t2 = \frac{240 - v}{1.5v}
+</span></p>
 
-<p>Teraz wystarczy przyrównać ze sobą równania (1) i (2), podstawić \(t_2\) i rozwiązać równanie:</p>
+<p>Teraz wystarczy przyrównać ze sobą równania (1) i (2), podstawić <span class="math">t2</span> i rozwiązać równanie:</p>
 
-<p>\[
-t_3 = t - 1 = t_1 + t_2
-\]</p>
+<p><span class="math">
+t3 = t - 1 = t1 + t2
+</span></p>
 
-<p>
-\[
+<p><span class="math">
 \frac{S}{v} - 1 = 1 + \frac{240 - v}{1.5v}
-\]</p>
+</span></p>
 
 <p>Podstawmy jednostki i przekształćmy to równanie:</p>
 
-<p>\[
--2 = \frac{240 - v}{1.5v}-\frac{240}{v}
-\]</p>
+<p><span class="math">
+-2 = \frac{240 - v}{1.5v} - \frac{240}{v}
+</span></p>
 
-<p>\[
+<p><span class="math">
 -3v = 240 - v - 360 &leftarrow; 240 \cdot 1.5 = 360
-\]</p>
+</span></p>
 
-<p>\[
+<p><span class="math">
 -2v = -120
-\]</p>
+</span></p>
 
-<p>\[
+<p><span class="math">
 v = 60
-\]</p>
-
-
+</span></p>
 
 <p style="font-size: 25px; opacity: 50%;">
     To jest nasza odpowiedź, ale nie zapomnijmy o jednostkach ;^
 </p>
 
-<p><b>Odpowiedź:</b> Średnia prędkość (\( v \)) jest równa \(60\ km/h\).</p>
+<p><b>Odpowiedź:</b> Średnia prędkość <span class="math">v</span> 
+    jest równa <span class="math">60 km/h</span>.</p>
+    
 
 
+<script>
+    // Wait for the content to be loaded and then render the math
+    setTimeout(function() {
+        const mathElements = document.querySelectorAll(".math"); // Select all elements with class "math"
+        
+        if (mathElements.length === 0) {
+            console.error("No math elements found.");
+            return;
+        }
+
+        mathElements.forEach(element => {
+            katex.render(element.innerHTML, element);
+        });
+    }, 1000);
+</script>
 </body>
 </html>
