@@ -44,6 +44,7 @@ html {
     background-color: #f4f4f4;
 }
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .sidebar {
@@ -63,3 +64,4 @@ html {
         margin-left: 70px; /* Adjusted to fit sidebar size */
     }
 }
+
