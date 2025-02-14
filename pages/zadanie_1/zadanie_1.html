@@ -3,83 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Rozwiązanie Zadania</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="content">
         <h2>Treść Zadania:</h2>
         <p>Pociąg miał pokonać trasę między dwoma miastami w czasie określonym w rozkładzie jazdy. Z powodu awarii został zatrzymany na pół godziny na stacji pośredniej. Pozostałe 120 km przejechał z prędkością większą o 20 km/h i dzięki temu nadrobił powstałe opóźnienie. Oblicz, jaka powinna być średnia prędkość pociągu zgodnie z rozkładem jazdy.</p>
-
         <h2>Rozwiązanie:</h2>
-        <p>Rozpoczynamy od zapisania wzoru na czas:</p>
         <div class="math">t = \frac{s}{v}</div>
         <p>gdzie:</p>
         <ul>
             <li><strong>s</strong> – odległość,</li>
             <li><strong>v</strong> – prędkość średnia.</li>
         </ul>
-        <p>Zapisujemy równanie związane z czasem podróży, uwzględniając opóźnienie:</p>
         <div class="math">
-\frac{120}{v} = \frac{120}{v+20} + \frac{1}{2}
+            \frac{120}{v} = \frac{120}{v+20} + \frac{1}{2}
         </div>
-        <p>Przekształcamy to równanie:</p>
         <div class="math">
-\frac{120 - \frac{1}{2} v}{v} = \frac{120}{v+20}
+            v \gt 0
         </div>
-        <p>Mnożymy przez <code>v(v + 20)</>, aby pozbyć się ułamków:</p>
         <div class="math">
-120v = (120 - \frac{1}{2} v)(v + 20)
+            \frac{120 - \frac{1}{2} v}{v} = \frac{120}{v+20}
         </div>
-        <p>Rozwijamy równanie:</p>
         <div class="math">
-120v = 120v + 2400 - \frac{1}{2} v^2 - 10v
+            120v = (120 - \frac{1}{2}v)(v+20)
         </div>
-        <p>Porządkujemy:</p>
         <div class="math">
--\frac{1}{2} v^2 - 10v + 2400 = 0
+            120v = 120v + 2400 - \frac{1}{2}v^2-10v
         </div>
-        <p>Obliczamy wyróżnik:</p>
         <div class="math">
-\Delta = (-10)^2 - 4 \cdot (-\frac{1}{2}) \cdot 2400
-\Delta = 100 + 4800 = 4900
+            -\frac{1}{2}v^2 - 10v + 2400 = 0
         </div>
-        <p>Obliczamy pierwiastek z wyróżnika:</p>
         <div class="math">
-\sqrt{\Delta} = 70
+            \Delta = (-10)^2 - 4 \cdot (-\frac{1}{2}) \cdot 2400 = 4900
         </div>
-        <p>Rozwiązania równania kwadratowego:</p>
         <div class="math">
-v_{1} = \frac{10 - 70}{-1} = 60
-v_{2} = \frac{10 + 70}{-1} = -80
+            \sqrt{\Delta} = 70
         </div>
-        <p>Ponieważ prędkość musi być dodatnia, rozwiązanie <code class="math">v_{2}</code> jest niepoprawne. Ostatecznie:</p>
         <div class="math">
-v = 60 km/h
+            v_{1} = \frac{10 - 70}{2 \cdot -\frac{1}{2}}
         </div>
-
-        <p>Średnia prędkość pociągu zgodnie z rozkładem jazdy powinna wynosić 60 km/h.</p>
+        <div class="math">
+            v_{2} = \frac{10 + 70}{2 \cdot -\frac{1}{2}} \quad \text{sprzeczne}
+        </div>
+        <div class="math">
+            
+        </div>
+        <div class="math">
+            v = 60 \text{ km/h}
+        </div>
     </div>
+
     <script>
-        // Wait for the content to be loaded and then render the math
         setTimeout(function() {
-            const mathElements = document.querySelectorAll(".math"); // Select all elements with class "math"
-
-            if (mathElements.length === 0) {
-                console.error("No math elements found.");
-                return;
-            }
-
+            const mathElements = document.querySelectorAll(".math");
             mathElements.forEach(element => {
                 katex.render(element.innerHTML, element);
             });
         }, 1000);
     </script>
-
+    
     <div class="footer">
         <p>&copy; 2025 Rozwiązanie Matematyczne</p>
     </div>
-
 </body>
 </html>
